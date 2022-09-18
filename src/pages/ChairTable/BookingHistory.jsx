@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { layThongTinNguoiDungAction } from "../../Redux/Action/QuanLyNguoiDungAction";
 import moment from "moment";
-import { __ } from "lodash";
+import _, { __ } from "lodash";
 
 export default function BookingHistory() {
   const dispatch = useDispatch();
@@ -47,13 +47,14 @@ export default function BookingHistory() {
                     <br />
                     Ngày Chiếu: {moment(user.ngayDat).format("DD-MM-YYYY")}{" "}
                   </p>
+                  <p>{_.first(user.danhSachGhe).tenHeThongRap}</p>
+                  <p>{_.first(user.danhSachGhe).tenRap} - Ghế: </p>
+
                   {user.danhSachGhe?.map((ghe, index) => {
                     return (
-                      <div key={index}>
-                        <p>{ghe.tenHeThongRap}</p>
-                        <span>{ghe.tenRap}: </span>
+                      <Fragment key={index}>
                         <span className="text-success p-3">[{ghe.tenGhe}]</span>
-                      </div>
+                      </Fragment>
                     );
                   })}
                 </div>
