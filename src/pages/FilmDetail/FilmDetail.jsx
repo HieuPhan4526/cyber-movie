@@ -45,14 +45,14 @@ export default function FilmDetail(props) {
           >
             <div className="container">
               <div className="row">
-                <div className="col-6">
+                <div className="col-sm-12 col-lg-6">
                   <div
                     style={{
                       position: "absolute",
                       top: "20vh",
                     }}
                   >
-                    <div className="d-flex justify-content-center align-items-center">
+                    <div className="filmContent d-flex justify-content-center align-items-center ">
                       <img
                         width={250}
                         height={300}
@@ -77,7 +77,7 @@ export default function FilmDetail(props) {
                     </div>
                   </div>
                 </div>
-                <div className="col-6">
+                <div className="rate_filmDetail col-sm-12 col-lg-6">
                   <div
                     style={{
                       position: "absolute",

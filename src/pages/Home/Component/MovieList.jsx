@@ -18,7 +18,8 @@ export default function MovieList(props) {
     let [movieArr, setMovieArr] = useState([]);
 
     useEffect(() => {
-      movieService.GetMovieList()
+      movieService
+        .GetMovieList()
         .then((result) => {
           setMovieArr(result.data.content);
         })
@@ -29,7 +30,7 @@ export default function MovieList(props) {
 
     return movieArr.map((movie) => {
       return (
-        <SwiperSlide className="mb-2" key={movie.maPhim}>
+        <SwiperSlide className="mb-2 listMovie" key={movie.maPhim}>
           <Card
             onClick={() => {
               history.push(`/filmdetail/${movie.maPhim}`);
@@ -61,9 +62,30 @@ export default function MovieList(props) {
     });
   };
   return (
-    <div className='section'>
+    <div className="section">
       <h2>Danh Sách Phim</h2>
-      <Swiper spaceBetween={50} slidesPerView={6} className="text-center ">
+      <Swiper
+        breakpoints={{
+          300: {
+            slidesPerView: 1,
+          },
+          600: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          800: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 6,
+            spaceBetween: 50,
+          },
+        }}
+        spaceBetween={50}
+        slidesPerView={6}
+        className="text-center "
+      >
         {RenderCard()}
       </Swiper>
     </div>

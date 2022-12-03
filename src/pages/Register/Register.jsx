@@ -58,24 +58,24 @@ export default function Register() {
         backgroundImage:
           "linear-gradient(to bottom,rgba(20,50,93,.9),rgba(8,22,48,.9))",
       }}
-      className=" text-light p-4"
+      className="container loginContent text-light p-4"
     >
       <div>
         <div className="text-center">
           <NavLink to="/">
             <Logo></Logo>
           </NavLink>
-          <p className="font-weight-bold my-4">
+          <p className="register_title font-weight-bold my-4">
             Đăng nhập để được nhiều ưu đãi, mua vé và bảo mật thông tin!
           </p>
         </div>
       </div>
       <form onSubmit={formik.handleSubmit}>
-        <div className="form-group">
+        <div className="form-group form_Register">
           <label htmlFor="taiKhoan">Tài Khoản</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control form_Register"
             id="taiKhoan"
             name="taiKhoan"
             onChange={formik.handleChange}
@@ -85,7 +85,7 @@ export default function Register() {
             <div className="text-danger">{formik.errors.taiKhoan}</div>
           ) : null}
         </div>
-        <div className="form-group">
+        <div className="form-group form_Register">
           <label htmlFor="matKhau">Password</label>
           <input
             type="password"
@@ -99,7 +99,7 @@ export default function Register() {
             <div className="text-danger">{formik.errors.matKhau}</div>
           ) : null}
         </div>
-        <div className="form-group">
+        <div className="form-group form_Register">
           <label htmlFor="matKhau">email</label>
           <input
             type="email"
@@ -113,7 +113,7 @@ export default function Register() {
             <div className="text-danger">{formik.errors.email}</div>
           ) : null}
         </div>
-        <div className="form-group">
+        <div className="form-group form_Register">
           <label htmlFor="matKhau">Số Điện Thoại</label>
           <input
             type="text"
@@ -127,7 +127,7 @@ export default function Register() {
             <div className="text-danger">{formik.errors.soDt}</div>
           ) : null}
         </div>
-        <div className="form-group">
+        <div className="form-group form_Register">
           <label htmlFor="matKhau">Họ Tên</label>
           <input
             type="text"

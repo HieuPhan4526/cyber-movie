@@ -16,11 +16,9 @@ export default function Login() {
     },
     validationSchema: Yup.object({
       //Các hàm validation của từng trường dữ liệu
-      taiKhoan: Yup.string()
-        .required("Tài khoản không được để trống"),
+      taiKhoan: Yup.string().required("Tài khoản không được để trống"),
       //Ít nhất ký chữ, in hoa, số...
-      matKhau: Yup.string()
-        .required("Mật khẩu không được để trống"),
+      matKhau: Yup.string().required("Mật khẩu không được để trống"),
     }),
     onSubmit: (values) => {
       dispatch(dangNhapAction(values));
@@ -38,7 +36,7 @@ export default function Login() {
         backgroundImage:
           "linear-gradient(to bottom,rgba(20,50,93,.9),rgba(8,22,48,.9))",
       }}
-      className=" text-light p-5"
+      className="loginContent container text-light p-5"
     >
       <div>
         <div className="text-center">

@@ -1,0 +1,50 @@
+
+@media  only screen and (max-width: 1160px) {
+    #navbarSupportedContent{
+        text-align: center;
+        background-color: white;
+    }
+}
+
+@media  only screen and (max-width: 900px) {
+    .rate_filmDetail{
+        display: none;
+    }
+    .filmContent{
+        flex-wrap: wrap;
+    }
+
+}
+
+@media  only screen and (max-width: 600px) {
+    .bannerHome{
+        height: 200px !important;
+    }
+    .filmContent>img{
+        width: 140px;
+        height: 100px;
+    }
+    .logoDetail{
+        margin-right: 10px !important;
+        width: 44px;
+        height: 20px;
+    }
+    .ant-tabs-nav-list{
+        width: 100px !important;
+    }
+    .theater_content,
+    .theater_content h4,
+    .theater_content button{
+        font-size: 10px;
+    }
+    .loginContent{
+        width: 100% !important;
+        height: 100%;
+    }
+    .form_Register{
+        margin: 0 !important;
+    }
+    .register_title{
+        margin: 0 !important; 
+    }
+}

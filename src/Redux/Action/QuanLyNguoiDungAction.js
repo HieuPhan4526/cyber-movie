@@ -44,6 +44,11 @@ export const dangKyAction = (thongTinDangKy) => {
             await history.goBack();
 
         } catch (error) {
+            swal({
+                text: "Đăng ký không thành công!, Vui lòng kiểm tra tài khoản hoặc email lại",
+                icon: "warning",
+                dangerMode: true,
+            });
             console.log(error);
         }
     };

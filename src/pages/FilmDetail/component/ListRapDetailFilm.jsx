@@ -22,7 +22,13 @@ export default function ListRapDetailFilm(props) {
           tab={
             <Fragment>
               <div>
-                <img width={60} height={60} src={rap.logo} alt="" />
+                <img
+                  className="logoDetail"
+                  width={60}
+                  height={60}
+                  src={rap.logo}
+                  alt=""
+                />
                 <span className="ml-4 font-weight-bold">
                   {rap.tenHeThongRap}
                 </span>
@@ -35,13 +41,13 @@ export default function ListRapDetailFilm(props) {
             return (
               <div className="d-flex mb-5" key={index}>
                 <img
-                  className="mb-5 mr-4"
+                  className="logoDetail mb-5 mr-4"
                   width={60}
                   height={60}
                   src={cumRap.hinhAnh}
                   alt=""
                 />
-                <div className="font-weight-bold">
+                <div className="theater_content font-weight-bold">
                   <h4 className="text-success">{cumRap.tenCumRap}</h4>
                   <p>{cumRap.diaChi}</p>
                   {cumRap.lichChieuPhim.map((lichChieu, index) => {
