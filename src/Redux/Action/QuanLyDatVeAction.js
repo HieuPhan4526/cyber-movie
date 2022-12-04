@@ -1,7 +1,8 @@
 import { quanLyDatVeServices } from "../../Service/QuanLyDatVeServices";
 import { ThongTinDatVe } from "../../_core/models/thongTinDatVe";
 import { CHANGE_TAB, SET_DS_GHE_DETAIL } from "../Type/QuanLyDatVeType";
-import swal from "sweetalert"
+import swal from "sweetalert";
+import { history } from "../../App";
 
 export const ChiTietDatGheAction = (maLichChieu) => {
     return async dispatch => {
@@ -28,7 +29,7 @@ export const datVeAction = (thongTinDatVe = new ThongTinDatVe()) => {
             dispatch({
                 type: CHANGE_TAB,
             });
-
+            history.push("/home");
         } catch (error) {
             console.log(error);
         }

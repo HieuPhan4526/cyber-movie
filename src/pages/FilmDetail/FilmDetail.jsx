@@ -7,6 +7,8 @@ import { layThongTinLichChieuAction } from "../../Redux/Action/QuanLyHeThongRapA
 //Css
 import filmDetailCss from "./FilmDetail.module.css";
 import { history } from "../../App";
+import Loadding from "../../Component/Loadding/Loadding";
+import { HIDE_LOADDING, SHOW_LOADDING } from "../../Redux/Type/LoaddingType";
 
 const desc = ["terrible", "bad", "normal", "good", "wonderful"];
 
@@ -18,6 +20,14 @@ export default function FilmDetail(props) {
   let dispatch = useDispatch();
   useEffect(() => {
     dispatch(layThongTinLichChieuAction(id));
+    dispatch({
+      type: SHOW_LOADDING,
+    });
+    setTimeout(() => {
+      dispatch({
+        type: HIDE_LOADDING,
+      });
+    }, 3000);
   }, []);
   let { heThongRapChieu } = filmDetail;
 
@@ -140,6 +150,7 @@ export default function FilmDetail(props) {
       >
         <ListRapDetailFilm heThongRapChieu={heThongRapChieu} />
       </div>
+      <Loadding />
     </Fragment>
   );
 }

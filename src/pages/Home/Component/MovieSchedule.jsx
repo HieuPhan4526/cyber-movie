@@ -4,9 +4,13 @@ import moment from "moment";
 import { theaterService } from "../../../Service/TheaterService";
 import Buttoncss from "../../../Component/Button/Buttoncss";
 import { history } from "../../../App";
+import Loadding from "../../../Component/Loadding/Loadding";
 const { Panel } = Collapse;
 
 export default function MovieSchedule() {
+  useEffect(() => {
+    GetData();
+  }, []);
   let [data, setData] = useState([]);
   let [groupList, setGroupList] = useState({
     list: [],
@@ -177,9 +181,6 @@ export default function MovieSchedule() {
       </div>
     );
   };
-  useEffect(() => {
-    GetData();
-  }, []);
   return (
     <div className="section">
       <h2>Lịch Chiếu Phim</h2>

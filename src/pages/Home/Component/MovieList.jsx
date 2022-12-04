@@ -7,28 +7,24 @@ import { EyeOutlined, LikeOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import { history } from "../../../App";
 import { movieService } from "../../../Service/MovieService";
+import { useDispatch, useSelector } from "react-redux";
+import { GetMovieListAction } from "../../../Redux/Action/MovieAction";
+import Loadding from "../../../Component/Loadding/Loadding";
+import { SHOW_LOADDING } from "../../../Redux/Type/LoaddingType";
 
 const { Meta } = Card;
 
 export default function MovieList(props) {
-  let arr = [];
-  arr.length = 10;
-
+  const { movieList } = useSelector((rootReducer) => rootReducer.MovieReducer);
+  const { loadding } = useSelector(
+    (rootReducer) => rootReducer.LoaddingReducer
+  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(GetMovieListAction());
+  }, []);
   const RenderCard = () => {
-    let [movieArr, setMovieArr] = useState([]);
-
-    useEffect(() => {
-      movieService
-        .GetMovieList()
-        .then((result) => {
-          setMovieArr(result.data.content);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, []);
-
-    return movieArr.map((movie) => {
+    return movieList.map((movie) => {
       return (
         <SwiperSlide className="mb-2 listMovie" key={movie.maPhim}>
           <Card

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   ChiTietDatGheAction,
@@ -8,6 +8,7 @@ import { CloseCircleOutlined, UserOutlined } from "@ant-design/icons";
 import "./chairTableCss.css";
 import { DAT_VE } from "../../Redux/Type/QuanLyDatVeType";
 import { ThongTinDatVe } from "../../_core/models/thongTinDatVe";
+import Loadding from "../../Component/Loadding/Loadding";
 export default function BookTicketsAndPay(props) {
   let { id } = props.match.params;
   const { thongTinPhongVe, danhSachGheDangDat } = useSelector(
@@ -16,12 +17,12 @@ export default function BookTicketsAndPay(props) {
   const { userLogin } = useSelector(
     (rootReducer) => rootReducer.QuanLyNguoiDungReducer
   );
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(ChiTietDatGheAction(id));
   }, []);
   let { danhSachGhe, thongTinPhim } = thongTinPhongVe;
-
   const renderChair = () => {
     return danhSachGhe.map((ghe, index) => {
       let gheVipCss = ghe.loaiGhe === "Vip" ? "gheVip" : "";
@@ -77,7 +78,6 @@ export default function BookTicketsAndPay(props) {
       );
     });
   };
-
   return (
     <div className="container">
       <div className="row">
@@ -162,7 +162,15 @@ export default function BookTicketsAndPay(props) {
                 const thongTinDatVe = new ThongTinDatVe();
                 thongTinDatVe.maLichChieu = id;
                 thongTinDatVe.danhSachVe = danhSachGheDangDat;
-                dispatch(datVeAction(thongTinDatVe));
+                if (thongTinDatVe.danhSachVe.length > 0) {
+                  dispatch(datVeAction(thongTinDatVe));
+                } else {
+                  swal({
+                    text: "Vui lòng chọn ghế.",
+                    icon: "warning",
+                    dangerMode: true,
+                  });
+                }
               }}
               className="btn btn-success w-100 font-weight-bold"
             >

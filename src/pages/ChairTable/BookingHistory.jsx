@@ -1,8 +1,9 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { layThongTinNguoiDungAction } from "../../Redux/Action/QuanLyNguoiDungAction";
 import moment from "moment";
 import _, { __ } from "lodash";
+import Loadding from "../../Component/Loadding/Loadding";
 
 export default function BookingHistory() {
   const dispatch = useDispatch();
@@ -12,8 +13,6 @@ export default function BookingHistory() {
   useEffect(() => {
     dispatch(layThongTinNguoiDungAction());
   }, []);
-
-  console.log(thongTinNguoiDung);
   let { thongTinDatVe } = thongTinNguoiDung;
 
   let renderBookingInFor = () => {
@@ -65,7 +64,6 @@ export default function BookingHistory() {
       );
     });
   };
-
   return (
     <div className="container">
       <div className="p-3">

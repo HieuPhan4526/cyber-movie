@@ -24,7 +24,7 @@ export const QuanLyDatVeReducers = (state = stateDefault, action) => {
             return { ...state };
         }
         case CHANGE_TAB: {
-            state.tabActive = "2";
+            state.danhSachGheDangDat = [];
             return { ...state };
         }
         case CHANGE_TAB_ACTIVE: {
