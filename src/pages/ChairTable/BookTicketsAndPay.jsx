@@ -9,6 +9,8 @@ import "./chairTableCss.css";
 import { DAT_VE } from "../../Redux/Type/QuanLyDatVeType";
 import { ThongTinDatVe } from "../../_core/models/thongTinDatVe";
 import Loadding from "../../Component/Loadding/Loadding";
+import swal from "sweetalert";
+
 export default function BookTicketsAndPay(props) {
   let { id } = props.match.params;
   const { thongTinPhongVe, danhSachGheDangDat } = useSelector(
