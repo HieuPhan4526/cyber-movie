@@ -1,4 +1,6 @@
-
+.ant-menu-inline.ant-menu-root .ant-menu-item {
+    flex-wrap: wrap;
+}
 @media  only screen and (max-width: 1160px) {
     #navbarSupportedContent{
         text-align: center;
@@ -6,12 +8,15 @@
     }
 }
 
-@media  only screen and (max-width: 900px) {
+@media  only screen and (max-width: 992px) {
     .rate_filmDetail{
         display: none;
     }
     .filmContent{
         flex-wrap: wrap;
+    }
+    .filmContent img{
+        height: 240px;
     }
 
 }
@@ -21,8 +26,8 @@
         height: 200px !important;
     }
     .filmContent>img{
-        width: 140px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
     }
     .logoDetail{
         margin-right: 10px !important;
@@ -36,6 +41,7 @@
     .theater_content h4,
     .theater_content button{
         font-size: 10px;
+        padding: 5px;
     }
     .loginContent{
         width: 100% !important;
@@ -47,4 +53,50 @@
     .register_title{
         margin: 0 !important; 
     }
+    .info-user{
+        font-size: 8px;
+    }
+    .table td, .table th{
+        padding: 5px;
+        font-size: 10px;
+    }
+    .info-booking{
+        font-size: 12px;
+    }
+    .info-booking h2{
+        font-size: 20px;
+    }
+    .ant-menu-inline.ant-menu-root .ant-menu-item{
+        padding-left: 0 !important;
+        width: 30px;
+    }
+    .ant-card-body{
+        padding: 1px;
+    }
+    .ant-list-item-meta-avatar img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+    .ant-collapse-content-box{
+        padding: 5px !important;
+    }
+    .ant-collapse-header{
+        padding: 0 !important;
+        flex-wrap: wrap !important;
+    }
+    .ant-collapse-header-text h5{
+        font-size: 14px;
+    }
+    .ant-divider-inner-text{
+        padding: 0 !important;
+    }
+    .ant-btn{
+        padding: 4px !important;
+        font-size: 12px !important;
+    }
+    .ant-tabs-left>.ant-tabs-content-holder>.ant-tabs-content>.ant-tabs-tabpane{
+        padding: 10px !important;
+    }
+  
+
 }

@@ -89,7 +89,7 @@ export default function BookTicketsAndPay(props) {
           </div>
           {renderChair()}
         </div>
-        <div className="col-4">
+        <div className="col-4 info-booking">
           <hr />
           <h2>{thongTinPhim.tenPhim}</h2>
           <p>Địa Điểm: {thongTinPhim.tenCumRap}</p>
@@ -155,9 +155,9 @@ export default function BookTicketsAndPay(props) {
             </tfoot>
           </table>
           <hr />
-          <h5>Email: {userLogin.email}</h5>
+          <h5 className="info-user">Email: {userLogin.email}</h5>
           <hr />
-          <h5>Tài Khoản: {userLogin.taiKhoan}</h5>
+          <h5 className="info-user">Tài Khoản: {userLogin.taiKhoan}</h5>
           <div className="mt-5">
             <button
               onClick={() => {

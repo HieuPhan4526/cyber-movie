@@ -18,7 +18,7 @@ export default function BookingHistory() {
   let renderBookingInFor = () => {
     return thongTinDatVe?.map((user, index) => {
       return (
-        <div className="col-6 p-4" key={index}>
+        <div className="col-12 col-lg-6 p-4" key={index}>
           <div
             className="card mb-3 font-weight-bold"
             style={{
@@ -52,7 +52,12 @@ export default function BookingHistory() {
                   {user.danhSachGhe?.map((ghe, index) => {
                     return (
                       <Fragment key={index}>
-                        <span className="text-success p-3">[{ghe.tenGhe}]</span>
+                        <span
+                          style={{ fontSize: "23px" }}
+                          className="text-success p-3"
+                        >
+                          [{ghe.tenGhe}]
+                        </span>
                       </Fragment>
                     );
                   })}

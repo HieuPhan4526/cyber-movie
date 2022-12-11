@@ -46,6 +46,7 @@ function App() {
           <ChairTableLayout exact path="/chairtable/:id" Component={ChairTable} />
 
 
+
         </Switch>
       </Router>
     </div>

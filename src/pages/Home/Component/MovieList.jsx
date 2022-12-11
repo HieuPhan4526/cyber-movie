@@ -11,6 +11,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { GetMovieListAction } from "../../../Redux/Action/MovieAction";
 import Loadding from "../../../Component/Loadding/Loadding";
 import { SHOW_LOADDING } from "../../../Redux/Type/LoaddingType";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper";
 
 const { Meta } = Card;
 
@@ -61,6 +64,11 @@ export default function MovieList(props) {
     <div className="section">
       <h2>Danh Sách Phim</h2>
       <Swiper
+        pagination={{
+          type: "fraction",
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
         breakpoints={{
           300: {
             slidesPerView: 1,
