@@ -16,24 +16,29 @@ export default function CustomerHeader() {
           style={{ cursor: "pointer" }}
           className="navbar-nav nav-link text-dark"
         >
-          <NavLink to="/profile">
-            <Avatar
-              size="large"
-              icon={<img src="https://picsum.photos/200/300" alt="" />}
+          <div className="d-flex justify-content-center align-items-center">
+            <NavLink
+              className={`d-flex align-items-center text-danger`}
+              to="/profile"
+            >
+              <Avatar
+                size="large"
+                icon={<img src="https://picsum.photos/200/300" alt="" />}
+              />
+              <span className="text-UserAD pl-2 pr-4">
+                {user.hoTen}/{user.maLoaiNguoiDung}
+              </span>
+            </NavLink>
+            <Button
+              onClick={() => {
+                localStorage.clear();
+                history.push("/home");
+              }}
+              type="danger"
+              shape="circle"
+              icon={<LogoutOutlined />}
             />
-            <span className="pl-2 pr-4">
-              {user.hoTen}/{user.maLoaiNguoiDung}
-            </span>
-          </NavLink>
-          <Button
-            onClick={() => {
-              localStorage.clear();
-              history.push("/home");
-            }}
-            type="danger"
-            shape="circle"
-            icon={<LogoutOutlined />}
-          />
+          </div>
         </div>
       );
     } else {
@@ -74,14 +79,17 @@ export default function CustomerHeader() {
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
+            data-target="#navbarSupportedContent2"
+            aria-controls="navbarSupportedContent2"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <div
+            className="collapse navbar-collapse"
+            id="navbarSupportedContent2"
+          >
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Logo />
