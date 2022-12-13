@@ -2,7 +2,7 @@ import React from "react";
 export default function MainFooter() {
   return (
     <div>
-      <div className="row text-center">
+      <div className="footer-content row text-center">
         <div className="col-sm-12 col-md-6">
           <h5>Website Build by Team:</h5>
           <ul>
@@ -16,11 +16,9 @@ export default function MainFooter() {
         </div>
         <div className="col-sm-12 col-md-6">
           <h5>Link source github :</h5>
-          <div>
-            <a href="https://github.com/BinFlex97/ReactFinal.git">
-              <p>https://github.com/BinFlex97/ReactFinal.git</p>
-            </a>
-          </div>
+          <a href="https://github.com/BinFlex97/ReactFinal.git">
+            https://github.com/BinFlex97/ReactFinal.git
+          </a>
         </div>
       </div>
     </div>

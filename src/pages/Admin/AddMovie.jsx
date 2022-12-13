@@ -10,7 +10,7 @@ import {
   Switch,
   Upload,
 } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { PlusOutlined } from "@ant-design/icons";
 import { useFormik } from "formik";
@@ -37,7 +37,7 @@ export default function AddMovie() {
     };
     formik.setFieldValue("hinhAnh", file);
   };
-  const hanldeLoading = (e) => {
+  useEffect(() => {
     dispatch({
       type: SHOW_LOADDING,
     });
@@ -46,7 +46,8 @@ export default function AddMovie() {
         type: HIDE_LOADDING,
       });
     }, 2000);
-  };
+  }, []);
+
   const formik = useFormik({
     initialValues: {
       tenPhim: "",
@@ -85,7 +86,6 @@ export default function AddMovie() {
         }
       }
       dispatch(AddNewMovieAction(formData));
-      hanldeLoading();
     },
   });
   return (
@@ -93,7 +93,7 @@ export default function AddMovie() {
       <PageHeader
         className="site-page-header mb-3"
         onBack={() => history.goBack()}
-        title={<h3>Thêm Phim Mới :</h3>}
+        title={<h3 className="addFilm-title">Thêm Phim Mới</h3>}
         style={{ border: " 1px solid rgb(235, 237, 240)" }}
       />
       <Card>
@@ -212,9 +212,7 @@ export default function AddMovie() {
             <img style={{ width: 200, height: 150 }} src={showImgSRC} alt="" />
           </Form.Item>
           <Form.Item label="Xác nhận">
-            <Button type="primary" htmlType="submit">
-              Thêm Phim
-            </Button>
+            <button className="btn btn-outline-primary">Thêm Phim</button>
           </Form.Item>
         </Form>
       </Card>

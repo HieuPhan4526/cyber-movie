@@ -24,18 +24,23 @@ export default function AdminLayout(props) {
       let user = JSON.parse(localStorage.getItem(USER_LOGIN));
       return (
         <div
-          style={{ cursor: "pointer", display: "Flex", alignItems: "center" }}
+          style={{ cursor: "pointer", alignItems: "center" }}
           className="d-flex text-dark"
         >
-          <NavLink to="/profile">
+          <div
+            className="d-flex align-items-center justify-content-center"
+            onClick={() => {
+              history("/profile");
+            }}
+          >
             <Avatar
               size="large"
               icon={<img src="https://picsum.photos/200/300" alt="" />}
             />
-            <span className="pl-2 pr-4">
-              {user.hoTen}/{user.maLoaiNguoiDung}
+            <span className="pl-2 pr-4 text-UserAD font-weight-bold">
+              <span>{user.hoTen}</span>/<span>{user.maLoaiNguoiDung}</span>
             </span>
-          </NavLink>
+          </div>
 
           <Button
             onClick={() => {
@@ -74,10 +79,16 @@ export default function AdminLayout(props) {
               <div className="logo p-3" style={{ border: "1px solid gray" }}>
                 <NavLink to={"/home"}>
                   <GitlabOutlined
-                    className="logo"
+                    className="logo mr-2"
                     style={{ fontSize: "40px" }}
                   />
-                  <span style={{ color: "white", fontSize: "20px" }}>
+                  <span
+                    style={{
+                      color: "white",
+                      fontWeight: "bold",
+                      fontSize: "15  px",
+                    }}
+                  >
                     Cyber Cinema
                   </span>
                 </NavLink>
@@ -90,58 +101,77 @@ export default function AdminLayout(props) {
                   {
                     key: "danhSachPhim",
                     icon: <VideoCameraOutlined />,
-                    label: <NavLink to={"/admin/film"}>Danh Sách Phim</NavLink>,
-                    children: [
-                      {
-                        key: "themPhimmoi",
-                        label: (
-                          <NavLink to={"/admin/film/addfilm"}>
-                            Thêm phim mới
-                          </NavLink>
-                        ),
-                        icon: <UploadOutlined />,
-                      },
-                    ],
+                    label: (
+                      <span
+                        onClick={() => {
+                          history.push("/admin/film/addfilm");
+                        }}
+                        className="meunu-text font-weight-bold"
+                      >
+                        Thêm phim mới
+                      </span>
+                    ),
                   },
                 ]}
               />
             </Sider>
-            <Layout>
-              <Header
-                className="site-layout-sub-header-background"
-                style={{
-                  padding: 10,
-                  marginLeft: 18,
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
-                <h1>Trang Quản Lý Hệ Thống</h1>
-                {renderUser()}
-              </Header>
-              <Content
-                style={{
-                  margin: "24px 16px 0",
-                }}
-              >
-                <div
-                  className="site-layout-background"
+            <div className="container">
+              <Layout>
+                <nav
                   style={{
-                    padding: 24,
-                    minHeight: 360,
+                    padding: 10,
+                    margin: 18,
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                  className="navbar navbar-expand-lg navbar-light bg-light"
+                >
+                  <a className="navbar-brand" href="#">
+                    <h1 className="m-0">Admin</h1>
+                  </a>
+                  <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span className="navbar-toggler-icon" />
+                  </button>
+                  <div
+                    className="collapse navbar-collapse justify-content-end"
+                    id="navbarSupportedContent"
+                  >
+                    {renderUser()}
+                  </div>
+                </nav>
+                <Content
+                  style={{
+                    margin: "24px 16px 0",
                   }}
                 >
-                  <props.component {...propsRoute} />
-                </div>
-              </Content>
-              <Footer
-                style={{
-                  textAlign: "center",
-                }}
-              >
-                <MainFooter />
-              </Footer>
-            </Layout>
+                  <div
+                    className="site-layout-background"
+                    style={{
+                      padding: 24,
+                      minHeight: 360,
+                    }}
+                  >
+                    <props.component {...propsRoute} />
+                  </div>
+                </Content>
+                <Footer
+                  style={{
+                    textAlign: "center",
+                  }}
+                >
+                  <MainFooter />
+                </Footer>
+              </Layout>
+            </div>
           </Layout>
         );
       }}

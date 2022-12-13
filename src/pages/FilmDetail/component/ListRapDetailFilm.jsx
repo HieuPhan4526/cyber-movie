@@ -29,7 +29,9 @@ export default function ListRapDetailFilm(props) {
                   src={rap.logo}
                   alt=""
                 />
-                <p className="mt-4 font-weight-bold">{rap.tenHeThongRap}</p>
+                <p className="text-logoTheater mt-4 font-weight-bold">
+                  {rap.tenHeThongRap}
+                </p>
               </div>
               <hr className="w-100" />
             </Fragment>
