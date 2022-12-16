@@ -100,28 +100,26 @@ export default function BookTicketsAndPay(props) {
           <div>
             <ul>
               <li className="d-flex align-items-center">
-                <button className="ghe mx-0"></button>
+                <button className="ghe chair-reponsive mx-0"></button>
                 <span className="ml-2 font-weight-bold">Ghế thường</span>
               </li>
               <li className="d-flex align-items-center my-2">
-                <button className="gheDangChon"></button>
+                <button className="gheDangChon chair-reponsive "></button>
                 <span className="ml-2 font-weight-bold">Ghế Đang Chọn</span>
               </li>
               <li className="d-flex align-items-center my-2">
-                <button className="gheVip"></button>
+                <button className="gheVip chair-reponsive"></button>
                 <span className="ml-2 font-weight-bold">Ghế Vip</span>
               </li>
 
               <li className="d-flex align-items-center my-2">
-                <button className="gheDuocChon">
-                  {" "}
+                <button className="gheDuocChon  chair-reponsive2">
                   <CloseCircleOutlined />
                 </button>
                 <span className="ml-2 font-weight-bold">Ghế Đã Được Đặt</span>
               </li>
               <li className="d-flex align-items-center my-2">
-                <button className="gheDaDuocDat">
-                  {" "}
+                <button className="gheDaDuocDat chair-reponsive2 ">
                   <UserOutlined className="text-warning" />
                 </button>
                 <span className="ml-2 font-weight-bold">Ghế Mình Đặt</span>

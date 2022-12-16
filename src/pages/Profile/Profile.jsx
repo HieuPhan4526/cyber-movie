@@ -55,40 +55,56 @@ export default function Profile() {
     <div>
       <h1>Thông tin người dùng :</h1>
       <Row gutter={[16, 24]}>
-        <Col span={12}>
+        <Col lg={12}>
           <Card>
             <Divider style={{ fontSize: 30 }} orientation="middle">
               Thông Tin Cá Nhân
             </Divider>
-            <Row className="pt-5" style={{ paddingLeft: 100 }} gutter={[0, 30]}>
-              <Col span={12}>
+            <Row
+              className="customAnt-row"
+              style={{ paddingLeft: 100 }}
+              gutter={[0, 30]}
+            >
+              <Col span={10}>
                 <h5>Tài Khoản :</h5>
               </Col>
-              <Col span={12}>{userLogin.taiKhoan}</Col>
-              <Col span={12}>
+              <Col className="custtomAnt-profileUser" span={14}>
+                {userLogin.taiKhoan}
+              </Col>
+              <Col span={10}>
                 <h5>Họ Tên :</h5>
               </Col>
-              <Col span={12}>{userLogin.hoTen}</Col>
-              <Col span={12}>
+              <Col className="custtomAnt-profileUser" span={14}>
+                {userLogin.hoTen}
+              </Col>
+              <Col span={10}>
                 <h5>Email :</h5>
               </Col>
-              <Col span={12}>{userLogin.email}</Col>
-              <Col span={12}>
+              <Col className="custtomAnt-profileUser" span={14}>
+                {userLogin.email}
+              </Col>
+              <Col span={10}>
                 <h5>Số điện thoại :</h5>
               </Col>
-              <Col span={12}>{userLogin.soDT}</Col>
-              <Col span={12}>
+              <Col className="custtomAnt-profileUser" span={14}>
+                {userLogin.soDT}
+              </Col>
+              <Col span={10}>
                 <h5>Mã loại người dùng :</h5>
               </Col>
-              <Col span={12}>{userLogin.maLoaiNguoiDung}</Col>
-              <Col span={12}>
+              <Col className="custtomAnt-profileUser" span={14}>
+                {userLogin.maLoaiNguoiDung}
+              </Col>
+              <Col span={10}>
                 <h5>Mã nhóm :</h5>
               </Col>
-              <Col span={12}>{userLogin.maNhom}</Col>
+              <Col className="custtomAnt-profileUser" span={14}>
+                {userLogin.maNhom}
+              </Col>
             </Row>
           </Card>
         </Col>
-        <Col span={12}>
+        <Col lg={12}>
           <Card>
             <Divider style={{ fontSize: 30 }} orientation="middle">
               Lịch Sử đặt ghế

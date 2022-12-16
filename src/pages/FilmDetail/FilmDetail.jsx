@@ -5,7 +5,6 @@ import moment from "moment";
 import ListRapDetailFilm from "./component/ListRapDetailFilm";
 import { layThongTinLichChieuAction } from "../../Redux/Action/QuanLyHeThongRapAction.js";
 //Css
-import filmDetailCss from "./FilmDetail.module.css";
 import { history } from "../../App";
 import Loadding from "../../Component/Loadding/Loadding";
 import { HIDE_LOADDING, SHOW_LOADDING } from "../../Redux/Type/LoaddingType";
@@ -57,6 +56,7 @@ export default function FilmDetail(props) {
               <div className="row">
                 <div className="col-sm-12 col-lg-6">
                   <div
+                    className="left-contentDetail"
                     style={{
                       position: "absolute",
                       top: "20vh",
@@ -70,7 +70,7 @@ export default function FilmDetail(props) {
                         alt=""
                       />
                       <div
-                        className={`ml-3 text-white font-weight-bold ${filmDetailCss["reponsive"]}`}
+                        className={`textLeft-filmDetail ml-3 text-white font-weight-bold`}
                       >
                         <p>
                           {moment(filmDetail.ngayKhoiChieu).format(

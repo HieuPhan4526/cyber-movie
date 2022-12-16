@@ -7,23 +7,29 @@ const { Content, Footer } = Layout;
 
 const CustomerLayout = (props) => {
   return (
-    <Route exact path={props.path} render={(propsRoute) => {
+    <Route
+      exact
+      path={props.path}
+      render={(propsRoute) => {
         return (
           <Fragment>
             <Layout className="customerLayout layout">
-              <CustomerHeader/>
+              <CustomerHeader />
               <Content style={{ padding: "100px 50px" }}>
-                <Breadcrumb style={{ margin: "16px 0" }}>
+                {/* <Breadcrumb style={{ margin: "16px 0" }}>
                   <Breadcrumb.Item>Home</Breadcrumb.Item>
                   <Breadcrumb.Item>List</Breadcrumb.Item>
                   <Breadcrumb.Item>App</Breadcrumb.Item>
-                </Breadcrumb>
-                <div className="site-layout-content" style={{backgroundColor: "rgba(255,255,255, 0.8)"}}>
+                </Breadcrumb> */}
+                <div
+                  className="site-layout-content"
+                  style={{ backgroundColor: "rgba(255,255,255, 0.8)" }}
+                >
                   <props.component {...propsRoute} />
                 </div>
               </Content>
-              <Footer style={{borderRadius:"30px 30px 0 0"}}>
-                <MainFooter/>
+              <Footer style={{ borderRadius: "30px 30px 0 0" }}>
+                <MainFooter />
               </Footer>
             </Layout>
           </Fragment>

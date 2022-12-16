@@ -54,8 +54,8 @@
 }
 .swiper-button-next:after, .swiper-button-prev:after{
   font-size: 10px !important;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: red;
   font-weight: 700;
   padding: 5px;
   border-radius: 50%;
