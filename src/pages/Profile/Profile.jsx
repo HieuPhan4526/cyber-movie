@@ -1,7 +1,9 @@
 import { Avatar, Card, Col, Divider, List, Row, Space } from "antd";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import Loadding from "../../Component/Loadding/Loadding";
+import { HIDE_LOADDING, SHOW_LOADDING } from "../../Redux/Type/LoaddingType";
 import { quanLyNguoiDungServices } from "../../Service/QuanLyNguoiDungServices";
 
 let data = Array.from({
@@ -19,6 +21,7 @@ let data = Array.from({
 export default function Profile() {
   let { userLogin } = useSelector((state) => state.QuanLyNguoiDungReducer);
   let [ticketOD, setTicketOD] = useState([]);
+  const dispatch = useDispatch();
   useEffect(() => {
     quanLyNguoiDungServices
       .GetTicketOrdered()
@@ -28,6 +31,14 @@ export default function Profile() {
       .catch((error) => {
         console.log(error);
       });
+    dispatch({
+      type: SHOW_LOADDING,
+    });
+    setTimeout(() => {
+      dispatch({
+        type: HIDE_LOADDING,
+      });
+    }, 2000);
   }, []);
   const renderTicketOrdered = (list) => {
     return list.map((info) => {
@@ -130,6 +141,7 @@ export default function Profile() {
           </Card>
         </Col>
       </Row>
+      <Loadding />
     </div>
   );
 }

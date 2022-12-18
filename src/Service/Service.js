@@ -9,38 +9,38 @@ export class Service {
       headers: {
         "TokenCybersoft": TOKEN
       }
-    })
-  }
+    });
+  };
   put = (url, model) => {
     return axios({
-      url: `${DOMAIN}/${url}`,
+      url: `${DOMAIN}${url}`,
       method: 'PUT',
       data: model,
       headers: {
         "TokenCybersoft": TOKEN,
         'Authorization': 'Bearer ' + localStorage.getItem(ACCESS_TOKEN),
       }
-    })
-  }
+    });
+  };
   post = (url, model) => {
     return axios({
-      url: `${DOMAIN}/${url}`,
+      url: `${DOMAIN}${url}`,
       method: 'POST',
       data: model,
       headers: {
         "TokenCybersoft": TOKEN,
-        'Authorization':'Bearer ' + localStorage.getItem(ACCESS_TOKEN),
+        'Authorization': 'Bearer ' + localStorage.getItem(ACCESS_TOKEN),
       }
-    })
-  }
+    });
+  };
   delete = (url) => {
     return axios({
-        url:`${DOMAIN}/${url}`,
-        method:'DELETE',
-        headers: {
-          "TokenCybersoft": TOKEN,
-          'Authorization': 'Bearer ' + localStorage.getItem(ACCESS_TOKEN),
-        }
-    })
-}
+      url: `${DOMAIN}${url}`,
+      method: 'DELETE',
+      headers: {
+        "TokenCybersoft": TOKEN,
+        'Authorization': 'Bearer ' + localStorage.getItem(ACCESS_TOKEN),
+      }
+    });
+  };
 }

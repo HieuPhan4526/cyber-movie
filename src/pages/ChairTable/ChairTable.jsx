@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Tabs } from "antd";
 import BookTicketsAndPay from "./BookTicketsAndPay";
 import BookingHistory from "./BookingHistory";
@@ -37,7 +37,7 @@ export default function ChairTable(props) {
     }, 2000);
   };
   return (
-    <div className="px-5">
+    <Fragment>
       <NavLink to="/">
         <Logo />
       </NavLink>
@@ -53,13 +53,21 @@ export default function ChairTable(props) {
         }}
       >
         <TabPane tab="01 Kết quả & thanh toán" key="1">
-          <BookTicketsAndPay {...props} />
+          <div className="customerLayout">
+            <div
+              style={{
+                backgroundColor: "rgba(0,0,0,0.5)",
+              }}
+            >
+              <BookTicketsAndPay {...props} />
+            </div>
+          </div>
         </TabPane>
         <TabPane tab="02 Lịch Sử Đặt Vé" key="2">
           <BookingHistory {...props} />
         </TabPane>
       </Tabs>
       <Loadding />
-    </div>
+    </Fragment>
   );
 }

@@ -1,3 +1,7 @@
+hr{
+    border-top: 1px solid white;
+}
+
 .ant-menu-inline.ant-menu-root .ant-menu-item {
     flex-wrap: wrap;
 }
@@ -17,10 +21,24 @@
 .custtomAnt-profileUser{
     text-align: center;
 }
+.ant-tabs-nav-wrap{
+    justify-content: center;
+    white-space: normal !important;
+}
+.infoFiml-Pay h2,
+.infoFiml-Pay h4{
+    color: white;
+}
+.ant-form-item-label>label{
+    white-space: normal;
+}
 @media  only screen and (max-width: 1160px) {
     #navbarSupportedContent2{
         text-align: center;
         background-color: white;
+    }
+    .left-contentDetail{
+        top: 0 !important;
     }
 }
 @media  only screen and (max-width: 992px) {
@@ -56,27 +74,38 @@
     }
     .textLeft-filmDetail{
         font-size: 15px;
-        
     }
-
-
+    .ant-form-item-label>label{
+        font-size: 10px;
+    }
+    .left-contentDetail{
+        top: 8vh !important;
+    }
+    .icon-play{
+        height: 50px !important;
+    }
+}
+@media only screen and (max-width:700px) {
+    .filmContent img{
+        height: 170px;
+    }
 }
 
 @media  only screen and (max-width: 600px) {
     .bannerHome{
         height: 200px !important;
     }
-    .filmContent>img{
-        width: 200px;
-        height: 200px;
+    .filmContent img{
+        width: 100px;
+        height: 100px;
     }
     .logoDetail{
         margin-right: 10px !important;
-        width: 44px;
+        width: 30px;
         height: 20px;
     }
     .ant-tabs-nav-list{
-        width: 100px !important;
+        width: 80px !important;
     }
     .theater_content,
     .theater_content h4,
@@ -95,7 +124,7 @@
         margin: 0 !important; 
     }
     .info-user{
-        font-size: 8px;
+        font-size: 15px;
     }
     .table td, .table th{
         padding: 5px;
@@ -180,6 +209,20 @@
     .custtomAnt-profileUser{
         font-size: 10px;
     }
-
-  
+    .ant-form-item-label>label{
+        font-size: 10px;
+    }
+    .custtomAnt-colAd{
+        padding: 0;
+    }
+    .icon-play{
+        width: 20px !important;
+        height: 20px !important;
+    }
+    .text-description h4{
+        font-size: 10px;
+    }
+    .text-description{
+        font-size: 10px;
+    }
 }

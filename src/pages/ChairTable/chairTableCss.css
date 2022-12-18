@@ -46,7 +46,6 @@
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;
     height: 100;
-    width: 80%;
     filter: drop-shadow(4px 30px 20px rgba(255, 255, 255, 0.5));
     font-size: 25px;
     color: #fff;
@@ -55,8 +54,8 @@
 
 
 .gheDangChon {
-    background: rgb(109, 238, 109);
-    border: 3px solid rgb(109, 238, 109);
+    background: rgb(109, 238, 109) !important;
+    border: 3px solid rgb(109, 238, 109) !important;
     color: #000;
 
     cursor: pointer;

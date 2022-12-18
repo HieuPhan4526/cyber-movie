@@ -30,7 +30,7 @@ export default function AdminLayout(props) {
           <div
             className="d-flex align-items-center justify-content-center"
             onClick={() => {
-              history("/profile");
+              history.push("/profile");
             }}
           >
             <Avatar
@@ -127,9 +127,9 @@ export default function AdminLayout(props) {
                   }}
                   className="navbar navbar-expand-lg navbar-light bg-light"
                 >
-                  <a className="navbar-brand" href="#">
+                  <NavLink to="/admin/film" className="navbar-brand">
                     <h1 className="m-0">Admin</h1>
-                  </a>
+                  </NavLink>
                   <button
                     className="navbar-toggler"
                     type="button"
